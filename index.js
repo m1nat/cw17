@@ -1,77 +1,162 @@
-// let arr1 = [1,2,3,4,5,6,7]
-// let myFunc = console.log( getFirst(arr1, 3, 5) ); 
+// class Worker {
 
-// function getFirst(arr , from, to ){
-//     return arr.filter ( (item, i,) =>  {
-//        return i > from && i < to;
-// })
-// };
+//         constructor (name, surname, rate, days){
+//         this.name = name;
+//         this.surname = surname;
+//         this.rate = rate;
+//         this.days = days;
+//         }
 
+//         getSalary() {
+//             return this.rate * this.days
+//         }
 
-// const user1 = {
-//     firstName: 'Vasya',
-//     lastName: 'Pupkin',
-//     age: 27
-// }
-// const user2 = {
-//     firstName: 'Leonid',
-//     lastName: 'Rogal',
-//     age: 25
-// }
-// const user3 = {
-//     firstName: 'Selena',
-//     lastName: 'Gomez',
-//     age: 23
 // }
 
-// const users = [
-//     user1,
-//     user2,
-//     user3
-// ];
-// ______________________________________________________________________________
-// const rangeAge = users.reduce( (acc, item) => {
-//     return acc + item.age
-// }, 0) / users.length
-// console.log(rangeAge);
-// _____________________________________________________________________________
-// const concatObj = users.map( item =>  ({
-//         fullname: `${item.firstName} ${item.lastName}`,
-//         age: item.age
-// }));
-// console.log(concatObj);
-// ______________________________________________________________________________
-// const names = users.map( item => item.name ) 
-// console.log(names)
-// _______________________________________________________________________________
+// const salary = new Worker('Vitaliy', 'Sinkevich', 90, 22);
+// console.log(salary.getSalary());
+                                    // ____________________________
+// class Worker {
 
+//     #name = 'Vitaliy';
+//     #surname = 'Sinkevich';
+//     #rate = 90;
+//     #days = 22;
+ 
+//     get name() {
+//         return this.#name
+//     }
+    
+//     get surname() {
+//         return this.#surname
+//     }
+ 
+//     get rate() {
+//         return this.#rate
+//     }
+ 
+//     get days() {
+//      return this.#days
+//     }
+ 
+//          getSalary() {
+//              return this.rate * this.days
+//          }
+ 
+//  }
+ 
+//  const salary = new Worker();
+//  console.log(salary.getSalary());
 
-// const btn = document.getElementById('btn')
-// const removeBtn = document.getElementById('removeBtn')
+// ____________________________________________________________________________
+// class Worker {
 
-// removeBtn.onclick = function(){
-//     btn.removeEventListener('click', myFunc)
-// };
+//    #name = 'Vitaliy';
+//    #surname = 'Sinkevich';
+//    #rate = 90;
+//    #days = 22;
 
-// btn.addEventListener('click', myFunc);
+//    get name() {
+//        return this.#name
+//    }
+   
+//    get surname() {
+//        return this.#surname
+//    }
 
-// // btn.addEventListener('click', () => {
-// //     console.log('check');
-// // });
+//    get rate() {
+//        return this.#rate
+//    }
 
+//    get days() {
+//     return this.#days
+//    }
 
-// // btn.onclick = myFunc;
-  
-// function myFunc() {
-//     console.log('Check');
 // }
-// __________________________________________________________________________
 
-let par = document.getElementById('result');
-btn.addEventListener('click', myFunc);
+// const worker1 = new Worker();
+// console.log(worker1.rate);
+// console.log(worker1.days);
+// console.log(worker1.name);
+// console.log(worker1.surname);
+// _________________________________________________________________________________
 
-let x = 0
+// class Worker {
 
-function myFunc(){
-        par.innerHTML = x++;
+//    #name = 'Vitaliy';
+//    #surname = 'Sinkevich';
+//    #rate = 90;
+//    #days = 22;
+
+//    get name() {
+//        return this.#name
+//    }
+   
+//    get surname() {
+//        return this.#surname
+//    }
+
+//    get rate() {
+//        return this.#rate
+//    }
+
+//     set rate (value) {
+//         console.log(typeof value);
+//         this.#rate = value; 
+//         if(typeof value === 'number'){
+//             this.#rate = value
+//         }
+//     }
+
+//    get days() {
+//     return this.#days
+//    }
+
+//     set days (value) {
+//         console.log(typeof value);
+//         this.#days = value; 
+//         if(typeof value === 'number'){
+//             this.#days = value
+//         }
+//     }
+
+//              getSalary() {
+//              return this.rate * this.days
+//          }
+ 
+// }
+
+// worker1.rate = 100
+// const salary = new Worker();
+// console.log(salary.getSalary());
+// const worker1 = new Worker();
+// console.log(worker1.rate);
+// console.log(worker1.days);
+// console.log(worker1.name);
+// console.log(worker1.surname);
+
+// ________________________________________________________________________________
+
+class Rectangle {
+
+    constructor(sideA, sideB){
+        this.sideA = sideA
+        this.sideB = sideB
+    }
+
 }
+
+class Parallelepiped extends Rectangle {
+
+    constructor(height, sideA, sideB){
+        super(sideA, sideB);
+        this.height = height;
+    }
+
+    getVolumePar(){
+        return this.height * this.sideA * this.sideB
+    }
+}
+
+let newParallelepiped = new Parallelepiped (10, 5, 7)
+console.log('Area of Parallelepiped:', newParallelepiped.getVolumePar());
