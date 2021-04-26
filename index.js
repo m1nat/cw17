@@ -1,77 +1,133 @@
-// let arr1 = [1,2,3,4,5,6,7]
-// let myFunc = console.log( getFirst(arr1, 3, 5) ); 
+// setTimeout( () => console.log('Time'), 0);
 
-// function getFirst(arr , from, to ){
-//     return arr.filter ( (item, i,) =>  {
-//        return i > from && i < to;
+// setInterval(() => {
+//     console.log('Interval');
+// }, 1000);
+
+
+// const myInterval = setInterval(() => console.log('Interval'), 1000);
+// setTimeout(() => {
+//     console.log('Finish');
+//     clearInterval(myInterval);
+// }, 3000);
+
+
+
+
+// const printNumber = (from, to) => {
+//     let count = from;
+//     const iterval = setInterval(() => {
+//         console.log(count);
+//         count++;
+
+//         if(count === to + 1) {
+//             clearInterval(iterval)
+//         }
+
+//      }, 1000)
+// }
+
+// printNumber(1, 5);
+
+
+// console.log('Begin');
+// setTimeout(() => {
+//     console.log('Start loading');
+//     setTimeout(() => {
+//         console.log('Data recieved');
+//         setTimeout(() => {
+//             console.log('Complete loading!');
+//         }, 1500)
+//     }, 1500)
+// }, 1500);
+
+
+// const startPromise = () => new Promise ( (resolve, reject) => {
+//     setTimeout( () => {
+//         console.log('startPromise');
+//         resolve();
+//     }, 5000)
 // })
-// };
+
+// const midlePromise = () => new Promise ( (resolve, reject) => {
+//     setTimeout( () => {
+//         console.log('midlePromise');
+//         resolve();
+//     }, 2000)
+// })
+
+// const endPromise = () => new Promise ( (resolve, reject) => {
+//     setTimeout( () => {
+//         console.log('endPromise');
+//         resolve();
+//     }, 2000)
+// })
+
+// startPromise()
+//     .then(() =>  startPromise())
+//     .then(() => endPromise());
+
+// Promise.all([startPromise(), midlePromise(), endPromise()])
+//     .then(() => console.log('ALL'))
+// Promise.race ([startPromise(), midlePromise(), endPromise()])
+//     .then(() => console.log('RACE'));
 
 
-// const user1 = {
-//     firstName: 'Vasya',
-//     lastName: 'Pupkin',
-//     age: 27
-// }
-// const user2 = {
-//     firstName: 'Leonid',
-//     lastName: 'Rogal',
-//     age: 25
-// }
-// const user3 = {
-//     firstName: 'Selena',
-//     lastName: 'Gomez',
-//     age: 23
-// }
+const URL = 'https://jsonplaceholder.typicode.com/todos/1'
 
-// const users = [
-//     user1,
-//     user2,
-//     user3
-// ];
-// ______________________________________________________________________________
-// const rangeAge = users.reduce( (acc, item) => {
-//     return acc + item.age
-// }, 0) / users.length
-// console.log(rangeAge);
-// _____________________________________________________________________________
-// const concatObj = users.map( item =>  ({
-//         fullname: `${item.firstName} ${item.lastName}`,
-//         age: item.age
-// }));
-// console.log(concatObj);
-// ______________________________________________________________________________
-// const names = users.map( item => item.name ) 
-// console.log(names)
-// _______________________________________________________________________________
+// fetch(URL)
+//     .then(response => response.json())
+//     .then(json => console.log(json))
 
 
-// const btn = document.getElementById('btn')
-// const removeBtn = document.getElementById('removeBtn')
-
-// removeBtn.onclick = function(){
-//     btn.removeEventListener('click', myFunc)
-// };
-
-// btn.addEventListener('click', myFunc);
-
-// // btn.addEventListener('click', () => {
-// //     console.log('check');
-// // });
+// const getTodos = () => {
+    //     delay(3000)
+    //         .then( () => fetch(URL))
+    //         .then(response => response.json())
+    //         .then( json => console.log(json));
+    // }
+    
+    // getTodos();
 
 
-// // btn.onclick = myFunc;
-  
-// function myFunc() {
-//     console.log('Check');
-// }
-// __________________________________________________________________________
+const delay = ms => new Promise (resolve => setTimeout ( () => resolve(), ms))
 
-let par = document.getElementById('result');
-btn.addEventListener('click', myFunc);
+const fetchTodos = () => fetch(URL)
+    .then(response => response.json())
+    .then(json => console.log(json));
 
-let x = 0
-
-function myFunc(){
-        par.innerHTML = x++;
+const getTodos = async () => {
+    await delay(3000);
+    await fetchTodos();
 }
+
+getTodos()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// class TestClass {
+//     constructor(func){
+//         this.func = func
+//     }
+// }
+
+// const testClass = new TestClass(() => console.log('test'))
+// testClass.func();
