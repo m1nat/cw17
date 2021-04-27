@@ -1,77 +1,72 @@
-// let arr1 = [1,2,3,4,5,6,7]
-// let myFunc = console.log( getFirst(arr1, 3, 5) ); 
+// const div1 = document.createElement('div');
+// div1.innerHTML = 'div1'
+// div1.setAttribute('clicked', false)
+// // console.log( typeof div1.getAttribute('clicked'));
 
-// function getFirst(arr , from, to ){
-//     return arr.filter ( (item, i,) =>  {
-//        return i > from && i < to;
-// })
+// document.body.append(div1);
+
+// const div2 = document.createElement('div');
+// div2.innerHTML = 'div2';
+// // div1.append(div2);
+// div1.after(div2);
+
+// setTimeout ( () => div2.remove(), 2000);
+// setTimeout ( () => div2.className = 'redBlock', 2000);
+//     const div1 = document.createElement('div1');
+//     document.body.append(div1);
+
+//     const div2 = document.createElement('div2');
+//     div1.after(div2);
+
+//     const div3 = document.createElement('div2');
+//     div2.after(div3);
+
+
+//     let count = 0;
+//     let hour = 0;
+//     let min = 0;
+
+// setInterval(() => {
+//     count++
+//     div1.innerHTML = count;
+//     if(count > 59) {
+//         div2.innerHTML = `:${min++}`;
+//         count = 0
+//     }
+//     if(min > 59) {
+//         div3.innerHTML = `:${hour++}`;
+//         min = 0
+//     }
+// }, 5);
+
+// const div = document.createElement('div');
+// document.body.prepend(div);
+// div.innerHTML = 'DIV';
+// let count = 0;
+// div.onclick = function(){
+//     count++
+//     div.className = 'redBlock'
+//     if(count % 2 == 0){
+//         div.classList.remove('redBlock');
+//         div.innerHTML = 'DIV'
+//     }else{
+//         div.innerHTML = 'red'
+//     }
 // };
 
-
-// const user1 = {
-//     firstName: 'Vasya',
-//     lastName: 'Pupkin',
-//     age: 27
-// }
-// const user2 = {
-//     firstName: 'Leonid',
-//     lastName: 'Rogal',
-//     age: 25
-// }
-// const user3 = {
-//     firstName: 'Selena',
-//     lastName: 'Gomez',
-//     age: 23
-// }
-
-// const users = [
-//     user1,
-//     user2,
-//     user3
-// ];
-// ______________________________________________________________________________
-// const rangeAge = users.reduce( (acc, item) => {
-//     return acc + item.age
-// }, 0) / users.length
-// console.log(rangeAge);
-// _____________________________________________________________________________
-// const concatObj = users.map( item =>  ({
-//         fullname: `${item.firstName} ${item.lastName}`,
-//         age: item.age
-// }));
-// console.log(concatObj);
-// ______________________________________________________________________________
-// const names = users.map( item => item.name ) 
-// console.log(names)
-// _______________________________________________________________________________
-
-
-// const btn = document.getElementById('btn')
-// const removeBtn = document.getElementById('removeBtn')
-
-// removeBtn.onclick = function(){
-//     btn.removeEventListener('click', myFunc)
-// };
-
-// btn.addEventListener('click', myFunc);
-
-// // btn.addEventListener('click', () => {
-// //     console.log('check');
-// // });
-
-
-// // btn.onclick = myFunc;
-  
-// function myFunc() {
-//     console.log('Check');
-// }
-// __________________________________________________________________________
-
-let par = document.getElementById('result');
-btn.addEventListener('click', myFunc);
-
-let x = 0
-
-function myFunc(){
-        par.innerHTML = x++;
+for (let i = 0; i < 10; i++) {
+    const button = document.createElement('button')
+    document.body.button
+    button.innerHTML = 'Click'
+    const li = document.createElement('li');
+    document.body.append(li);
+    li.innerHTML = 'TODO'
+    li.onclick = function() {
+        li.style.textDecoration = "line-through"    
+    }
 }
+
+
+
+
+
